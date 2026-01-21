@@ -1,0 +1,228 @@
+/* ============================================
+   TIENDA VIRTUAL - FRONTEND INTERACTIVO
+   PALETA VERDE
+   Archivo: styles.css
+   ============================================ */
+
+/* =======================
+   VARIABLES CSS
+   ======================= */
+:root {
+    --color-primario: #198754;      /* Verde Bootstrap */
+    --color-secundario: #20c997;    /* Verde agua */
+    --color-favorito: #2fb344;      /* Verde énfasis */
+    --color-fondo: #f1f8f4;         /* Fondo verde muy suave */
+    --color-card: #ffffff;
+
+    --transicion-suave: all 0.3s ease;
+    --sombra-card: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --sombra-hover: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+/* =======================
+   ESTILOS GENERALES
+   ======================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    min-height: 100vh;
+}
+
+/* =======================
+   NAVBAR
+   ======================= */
+.navbar {
+    background: linear-gradient(90deg, #198754, #146c43);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+#contador-prioridades {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+}
+
+/* =======================
+   HERO SECTION
+   ======================= */
+.display-5 {
+    color: #146c43;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* =======================
+   CARRUSEL DE PRODUCTOS
+   ======================= */
+.carousel-inner img {
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* =======================
+   TARJETAS DE PRODUCTOS
+   ======================= */
+.tarjeta-tarea {
+    background-color: var(--color-card);
+    border-radius: 14px;
+    border: 2px solid transparent;
+    box-shadow: var(--sombra-card);
+    transition: var(--transicion-suave);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.tarjeta-tarea:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-hover);
+}
+
+.titulo-tarea {
+    transition: var(--transicion-suave);
+}
+
+/* =======================
+   PRODUCTO EN FAVORITOS
+   ======================= */
+.tarjeta-tarea.prioridad-alta {
+    border-color: var(--color-favorito);
+    background: linear-gradient(135deg, #e6f4ea 0%, #ffffff 100%);
+}
+
+.tarjeta-tarea.prioridad-alta .titulo-tarea {
+    color: #1f9d55;
+    font-weight: 700;
+}
+
+/* =======================
+   ICONO FAVORITO
+   ======================= */
+.icono-prioridad {
+    font-size: 1.3rem;
+    margin-left: 8px;
+    color: var(--color-favorito);
+    animation: latido 1s infinite alternate;
+}
+
+@keyframes latido {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.15);
+    }
+}
+
+/* =======================
+   BOTÓN FAVORITOS
+   ======================= */
+.btn-prioridad {
+    font-weight: 600;
+    transition: var(--transicion-suave);
+}
+
+.btn-prioridad:hover {
+    transform: scale(1.03);
+}
+
+.tarjeta-tarea.prioridad-alta .btn-prioridad {
+    background-color: var(--color-favorito);
+    color: #ffffff;
+    border-color: var(--color-favorito);
+}
+
+.tarjeta-tarea.prioridad-alta .btn-prioridad:hover {
+    background-color: #1f9d55;
+    border-color: #198754;
+}
+
+/* =======================
+   TOAST NOTIFICACIONES
+   ======================= */
+#notificacionToast {
+    min-width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+#notificacionToast.toast-exito {
+    background: linear-gradient(135deg, #198754, #146c43);
+    color: #ffffff;
+}
+
+#notificacionToast.toast-eliminado {
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: #ffffff;
+}
+
+.toast-body {
+    font-weight: 500;
+    padding: 1rem;
+}
+
+/* =======================
+   BADGES
+   ======================= */
+.badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+}
+
+/* =======================
+   FOOTER
+   ======================= */
+footer {
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =======================
+   ANIMACIONES
+   ======================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =======================
+   RESPONSIVE
+   ======================= */
+@media (max-width: 768px) {
+    .display-5 {
+        font-size: 2rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+/* =======================
+   SCROLLBAR (OPCIONAL)
+   ======================= */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e9f5ee;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a3cfbb;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6fbf9c;
+}
